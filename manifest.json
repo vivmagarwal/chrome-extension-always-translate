@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Allow Translate",
+  "version": "1.0",
+  "description": "Automatically remove the 'translate=no' attribute from HTML tags to enable translation on all websites.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["activeTab", "webNavigation"],
+  "action": {
+    "default_icon": {
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+  }
+}
